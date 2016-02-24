@@ -23,7 +23,7 @@
 	<name>kafka-spark-consumer</name>
 
 	<properties>
-		<spark.version>1.6.0</spark.version>
+		<spark.version>1.5.2</spark.version>
 		<kafka.version>0.9.0.0</kafka.version>
 	</properties>
 
@@ -147,6 +147,7 @@
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 			<version>2.10.0</version>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 
@@ -164,8 +165,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source>5</source>
-					<target>5</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>

@@ -18,36 +18,20 @@
 
 package consumer.kafka;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-
+import com.google.common.collect.ImmutableMap;
+import consumer.kafka.client.KafkaRangeReceiver;
+import consumer.kafka.client.KafkaReceiver;
 import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.streaming.StreamingContext;
 import org.apache.spark.streaming.api.java.JavaDStream;
 import org.apache.spark.streaming.api.java.JavaStreamingContext;
 import org.apache.spark.streaming.dstream.DStream;
-import org.apache.spark.streaming.scheduler.StreamingListener;
-import org.apache.spark.streaming.scheduler.StreamingListenerBatchCompleted;
-import org.apache.spark.streaming.scheduler.StreamingListenerBatchStarted;
-import org.apache.spark.streaming.scheduler.StreamingListenerBatchSubmitted;
-import org.apache.spark.streaming.scheduler.StreamingListenerOutputOperationStarted;
-import org.apache.spark.streaming.scheduler.StreamingListenerOutputOperationCompleted;
-import org.apache.spark.streaming.scheduler.StreamingListenerReceiverError;
-import org.apache.spark.streaming.scheduler.StreamingListenerReceiverStarted;
-import org.apache.spark.streaming.scheduler.StreamingListenerReceiverStopped;
+import org.apache.spark.streaming.scheduler.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.google.common.collect.ImmutableMap;
-
-import consumer.kafka.client.KafkaRangeReceiver;
-import consumer.kafka.client.KafkaReceiver;
+import java.io.Serializable;
+import java.util.*;
 
 @SuppressWarnings("serial")
 public class ReceiverLauncher implements Serializable {
@@ -196,16 +180,6 @@ public class ReceiverLauncher implements Serializable {
 
       @Override
       public void onBatchSubmitted(StreamingListenerBatchSubmitted arg0) {
-
-      }
-	  
-	    @Override
-      public void onOutputOperationStarted(StreamingListenerOutputOperationStarted arg0) {
-
-      }
-	    
-     @Override
-      public void onOutputOperationCompleted(StreamingListenerOutputOperationCompleted arg0) {
 
       }
 
